@@ -150,6 +150,26 @@ if (videoPlaceholder) {
     });
 }
 
+// Handle photo placeholder clicks
+const photoPlaceholders = document.querySelectorAll('.empty-photo-placeholder');
+if (photoPlaceholders.length > 0) {
+    photoPlaceholders.forEach(placeholder => {
+        placeholder.addEventListener('click', () => {
+            const message = [
+                'To add your photo:',
+                '',
+                '1. Create an "images" folder in your repository',
+                '2. Add your photo to the images folder',
+                '3. Replace the placeholder div with:',
+                '   <img src="images/your-photo.jpg" alt="Description" style="width: 100%; height: 250px; object-fit: cover;">',
+                '',
+                'Important: Ensure you have proper permissions and consent before using any photographs.'
+            ].join('\n');
+            alert(message);
+        });
+    });
+}
+
 // Lazy loading for images (when actual images are added)
 if ('IntersectionObserver' in window) {
     const imageObserver = new IntersectionObserver((entries, observer) => {

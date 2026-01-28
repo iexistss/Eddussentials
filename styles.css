@@ -431,17 +431,37 @@ section {
     text-align: center;
 }
 
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.video-item h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
 .video-placeholder {
     background: var(--light-bg);
     border: 3px dashed var(--secondary-color);
     border-radius: 10px;
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
     text-align: center;
-    min-height: 400px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.video-placeholder:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow);
 }
 
 .video-icon {
@@ -557,6 +577,42 @@ section {
     font-weight: 500;
 }
 
+/* Empty Photo Placeholder Styles */
+.empty-photo-placeholder {
+    background: var(--light-bg);
+    border: 3px dashed var(--secondary-color);
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.empty-photo-placeholder:hover {
+    border-color: var(--primary-color);
+    background: var(--white);
+}
+
+.photo-placeholder-content {
+    text-align: center;
+}
+
+.photo-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.photo-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
 .impact-caption {
     padding: 1.5rem;
     text-align: center;
@@ -567,13 +623,35 @@ section {
     margin-top: 3rem;
     padding: 2rem;
     background: var(--white);
-    border-left: 4px solid var(--accent-color);
+    border-left: 4px solid var(--secondary-color);
     border-radius: 5px;
 }
 
 .impact-note p {
     color: var(--text-light);
     line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+.impact-note code {
+    background: var(--light-bg);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+.impact-note pre {
+    background: var(--light-bg);
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.impact-note pre code {
+    background: none;
+    padding: 0;
 }
 
 /* Contact Section */
@@ -706,6 +784,10 @@ section {
     }
 
     .mission-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-grid {
         grid-template-columns: 1fr;
     }
 
