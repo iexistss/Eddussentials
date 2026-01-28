@@ -3,44 +3,55 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    
-    // Animate hamburger to X
-    hamburger.classList.toggle('active');
-});
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        
+        // Update aria-expanded attribute
+        const isExpanded = navMenu.classList.contains('active');
+        hamburger.setAttribute('aria-expanded', isExpanded);
+        
+        // Animate hamburger to X
+        hamburger.classList.toggle('active');
+    });
+}
 
 // Close mobile menu when clicking a link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
+        if (hamburger) {
+            hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
     });
 });
 
-// Navbar scroll effect
+// Navbar scroll effect with null check
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll <= 0) {
-        navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
-        return;
-    }
-    
-    if (currentScroll > lastScroll && currentScroll > 100) {
-        // Scrolling down
-        navbar.style.transform = 'translateY(-100%)';
-    } else {
-        // Scrolling up
-        navbar.style.transform = 'translateY(0)';
-        navbar.style.boxShadow = '0 8px 15px rgba(0, 0, 0, 0.15)';
-    }
-    
-    lastScroll = currentScroll;
-});
+if (navbar) {
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll <= 0) {
+            navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+            return;
+        }
+        
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            // Scrolling down
+            navbar.style.transform = 'translateY(-100%)';
+        } else {
+            // Scrolling up
+            navbar.style.transform = 'translateY(0)';
+            navbar.style.boxShadow = '0 8px 15px rgba(0, 0, 0, 0.15)';
+        }
+        
+        lastScroll = currentScroll;
+    });
+}
 
 // Smooth scroll for navigation links (fallback for older browsers)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -84,30 +95,15 @@ animateOnScroll.forEach(element => {
     observer.observe(element);
 });
 
-// Add parallax effect to hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    
-    if (hero && scrolled <= window.innerHeight) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
-
-// Counter animation for impact numbers (if you add statistics)
-function animateCounter(element, target, duration = 2000) {
-    let start = 0;
-    const increment = target / (duration / 16);
-    
-    const timer = setInterval(() => {
-        start += increment;
-        if (start >= target) {
-            element.textContent = target;
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(start);
+// Add parallax effect to hero section with null check
+const hero = document.querySelector('.hero');
+if (hero) {
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        if (scrolled <= window.innerHeight) {
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
         }
-    }, 16);
+    });
 }
 
 // Add active state to navigation based on scroll position
@@ -140,7 +136,17 @@ window.addEventListener('load', () => {
 const videoPlaceholder = document.querySelector('.video-placeholder');
 if (videoPlaceholder) {
     videoPlaceholder.addEventListener('click', () => {
-        alert('To add your research video:\n\n1. Upload your video to YouTube, Vimeo, or another video hosting service\n2. Get the embed code\n3. Replace the video placeholder in the HTML with your video embed code\n\nSee the HTML comments in the Evidence of Action section for instructions.');
+        // Create a more user-friendly modal message
+        const message = [
+            'To add your research video:',
+            '',
+            '1. Upload your video to YouTube, Vimeo, or another video hosting service',
+            '2. Get the embed code',
+            '3. Replace the video placeholder in the HTML with your video embed code',
+            '',
+            'See the HTML comments in the Evidence of Action section for instructions.'
+        ].join('\n');
+        alert(message);
     });
 }
 

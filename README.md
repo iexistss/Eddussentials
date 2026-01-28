@@ -52,7 +52,7 @@ To add your research video to the Evidence of Action section:
 1. Upload your video to YouTube, Vimeo, or another video hosting platform
 2. Get the embed code or URL
 3. Open `index.html`
-4. Find the section with the video placeholder (around line 145)
+4. Find the section with the video placeholder (around line 130)
 5. Replace the placeholder div with your video embed code:
 
 ```html
@@ -65,7 +65,7 @@ To add photos of your visits and impact:
 
 1. Add your images to an `images` folder in the repository
 2. Open `index.html`
-3. Find the Impact section (around line 180)
+3. Find the Impact section (around line 170)
 4. Replace the placeholder divs with actual images:
 
 ```html
@@ -98,7 +98,7 @@ The website is easy to customize:
 1. Go to your repository settings
 2. Navigate to "Pages"
 3. Select your branch (usually `main`)
-4. Save and your site will be live at `https://yourusername.github.io/Eddussentials`
+4. Save and your site will be live at `https://yourusername.github.io/Edussentials`
 
 ### Other Hosting Options
 
