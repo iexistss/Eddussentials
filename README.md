@@ -45,35 +45,54 @@ This repository contains the official Edussentials website showcasing our missio
 2. Open `index.html` in your web browser
 3. Or deploy to any web hosting service (GitHub Pages, Netlify, Vercel, etc.)
 
-### How to Add Your Research Video
+### How to Add Your Research Videos
 
-To add your research video to the Evidence of Action section:
+The Evidence of Action section now has **two video placeholders** for your research documentation:
 
-1. Upload your video to YouTube, Vimeo, or another video hosting platform
-2. Get the embed code or URL
+1. Upload your videos to YouTube, Vimeo, or another video hosting platform
+2. Get the embed code or URL for each video
 3. Open `index.html`
-4. Find the section with the video placeholder (around line 130)
-5. Replace the placeholder div with your video embed code:
+4. Find the video placeholders in the Research Documentation section (around line 130-155)
+5. Replace each placeholder div with your video embed code:
 
+**For Video 1:**
 ```html
-<iframe width="100%" height="400" src="YOUR_VIDEO_URL" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="300" src="YOUR_VIDEO_1_URL" frameborder="0" allowfullscreen></iframe>
+```
+
+**For Video 2:**
+```html
+<iframe width="100%" height="300" src="YOUR_VIDEO_2_URL" frameborder="0" allowfullscreen></iframe>
 ```
 
 ### How to Add Photos
 
+The photo gallery now has **6 empty placeholder slots** ready for your photos:
+
 To add photos of your visits and impact:
 
-1. Add your images to an `images` folder in the repository
-2. Open `index.html`
-3. Find the Impact section (around line 170)
-4. Replace the placeholder divs with actual images:
+1. Create an `images` folder in the repository (if it doesn't exist)
+2. Add your images to the `images` folder
+3. Open `index.html`
+4. Find the Impact section (around line 188-241)
+5. Replace each empty photo placeholder with actual images:
 
+**Example - Replace this:**
 ```html
-<div class="impact-item">
-    <img src="images/your-photo.jpg" alt="Description" style="width: 100%; height: 250px; object-fit: cover;">
-    <p class="impact-caption">Your caption here</p>
+<div class="empty-photo-placeholder">
+    <div class="photo-placeholder-content">
+        <span class="photo-icon">📷</span>
+        <p class="photo-text">Add Photo 1</p>
+    </div>
 </div>
 ```
+
+**With this:**
+```html
+<img src="images/your-photo.jpg" alt="Description" style="width: 100%; height: 250px; object-fit: cover;">
+```
+
+You can also click on any photo placeholder on the website to see these instructions!
 
 **Important**: Ensure you have proper permissions and consent before using any photographs of children.
 

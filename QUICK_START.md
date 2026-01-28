@@ -40,28 +40,50 @@ Your professional Edussentials website is now ready! Here's what we built:
 
 ## How to Customize
 
-### Add Your Research Video
-1. Upload your video to YouTube or Vimeo
-2. Get the embed code (click Share → Embed)
+### Add Your Research Videos (2 Videos Available!)
+The Evidence of Action section now has **two video placeholders**:
+
+1. Upload your videos to YouTube or Vimeo
+2. Get the embed code for each (click Share → Embed)
 3. Open `index.html`
-4. Find line ~130 (search for "video-placeholder")
-5. Replace the placeholder with:
+4. Find lines ~130-155 (search for "Research Video 1" and "Research Video 2")
+5. Replace each placeholder with your video embed code:
+
+**For Video 1:**
 ```html
-<iframe width="100%" height="400" src="YOUR_VIDEO_URL" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="300" src="YOUR_VIDEO_1_URL" frameborder="0" allowfullscreen></iframe>
 ```
 
-### Add Your Photos
+**For Video 2:**
+```html
+<iframe width="100%" height="300" src="YOUR_VIDEO_2_URL" frameborder="0" allowfullscreen></iframe>
+```
+
+### Add Your Photos (6 Photo Slots Available!)
+The photo gallery now has **6 empty slots** ready for your images:
+
 1. Create a folder called `images` in your repository
 2. Add your photos (with proper permissions!)
 3. Open `index.html`
-4. Find line ~170 (search for "impact-gallery")
-5. Replace each placeholder with:
+4. Find lines ~188-241 (search for "empty-photo-placeholder")
+5. Replace each placeholder div with an image tag:
+
+**Replace this:**
 ```html
-<div class="impact-item">
-    <img src="images/photo1.jpg" alt="Description" style="width: 100%; height: 250px; object-fit: cover;">
-    <p class="impact-caption">Your caption here</p>
+<div class="empty-photo-placeholder">
+    <div class="photo-placeholder-content">
+        <span class="photo-icon">📷</span>
+        <p class="photo-text">Add Photo 1</p>
+    </div>
 </div>
 ```
+
+**With this:**
+```html
+<img src="images/your-photo.jpg" alt="Description" style="width: 100%; height: 250px; object-fit: cover;">
+```
+
+💡 **Tip:** Click on any photo placeholder on the website to see instructions!
 
 ### Change Colors
 Open `styles.css` and edit the colors at the top:
