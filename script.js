@@ -95,16 +95,8 @@ animateOnScroll.forEach(element => {
     observer.observe(element);
 });
 
-// Add parallax effect to hero section with null check
-const hero = document.querySelector('.hero');
-if (hero) {
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        if (scrolled <= window.innerHeight) {
-            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-        }
-    });
-}
+// Parallax effect removed to prevent About section from overlapping with hero
+// The parallax was causing the hero to move down and cover content below
 
 // Add active state to navigation based on scroll position
 window.addEventListener('scroll', () => {
