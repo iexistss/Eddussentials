@@ -38,6 +38,24 @@ Your professional Edussentials website is now ready! Here's what we built:
 2. Drag and drop your repository folder
 3. Your site is live in seconds!
 
+## Ensuring Your Updates Show on the Live Site
+
+**Important:** When you make changes to your website, browsers may cache old versions of your files. To ensure visitors see your updates:
+
+### After Making Changes:
+1. Update the version number in `index.html`:
+   - Find `styles.css?v=1.0.1` and change to `styles.css?v=1.0.2` (or next version)
+   - Find `script.js?v=1.0.1` and change to `script.js?v=1.0.2` (or next version)
+2. Save and commit your changes
+3. Push to GitHub
+4. Wait 1-2 minutes for GitHub Pages to update
+5. Tell visitors to hard-refresh their browsers:
+   - **Windows:** Ctrl + F5 or Ctrl + Shift + R
+   - **Mac:** Cmd + Shift + R
+   - **Mobile:** Clear browser cache in settings
+
+💡 **Pro Tip:** Increment the version number (v=1.0.1 → v=1.0.2 → v=1.0.3) every time you update CSS or JavaScript files.
+
 ## How to Customize
 
 ### Add Your Research Videos (2 Videos Available!)
