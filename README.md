@@ -112,18 +112,17 @@ The website is easy to customize:
 
 ### Important: Ensuring Updates Show on Your Live Site
 
-When you make changes to your website, browsers may cache old versions. To ensure visitors see your updates:
+When you make changes to CSS or JavaScript files, browsers may cache old versions. To ensure visitors automatically see your updates:
 
-1. **After editing CSS or JavaScript**, update the version numbers in `index.html`:
+1. **After editing `styles.css` or `script.js`**, update the version numbers in `index.html`:
    - Change `styles.css?v=1.0.1` to `styles.css?v=1.0.2` (or next version)
    - Change `script.js?v=1.0.1` to `script.js?v=1.0.2` (or next version)
+   - Use the same version number for both files to keep it simple
 2. Commit and push your changes to GitHub
 3. Wait 1-2 minutes for GitHub Pages to deploy
-4. Clear your browser cache or hard refresh:
-   - **Windows/Linux:** Ctrl + F5 or Ctrl + Shift + R
-   - **Mac:** Cmd + Shift + R
+4. Verify changes by visiting your site in a private/incognito window
 
-This cache-busting technique ensures browsers download the latest versions of your files.
+**Note:** You only need to update version numbers when you modify the actual CSS or JavaScript files, not when you only change HTML content. Visitors will automatically receive the new versions without needing to clear their cache.
 
 ## Deployment
 

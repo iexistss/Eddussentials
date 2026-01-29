@@ -40,21 +40,19 @@ Your professional Edussentials website is now ready! Here's what we built:
 
 ## Ensuring Your Updates Show on the Live Site
 
-**Important:** When you make changes to your website, browsers may cache old versions of your files. To ensure visitors see your updates:
+**Important:** When you make changes to CSS or JavaScript files, browsers may cache old versions. To ensure visitors automatically see your updates:
 
-### After Making Changes:
-1. Update the version number in `index.html`:
+### After Making Changes to `styles.css` or `script.js`:
+1. Update the version numbers in `index.html`:
    - Find `styles.css?v=1.0.1` and change to `styles.css?v=1.0.2` (or next version)
    - Find `script.js?v=1.0.1` and change to `script.js?v=1.0.2` (or next version)
+   - Use the same version number for both to keep it simple (e.g., both to v=1.0.2)
 2. Save and commit your changes
 3. Push to GitHub
 4. Wait 1-2 minutes for GitHub Pages to update
-5. Tell visitors to hard-refresh their browsers:
-   - **Windows:** Ctrl + F5 or Ctrl + Shift + R
-   - **Mac:** Cmd + Shift + R
-   - **Mobile:** Clear browser cache in settings
+5. Verify your changes in a private/incognito browser window
 
-💡 **Pro Tip:** Increment the version number (v=1.0.1 → v=1.0.2 → v=1.0.3) every time you update CSS or JavaScript files.
+💡 **Pro Tip:** Only increment version numbers when you actually modify CSS or JavaScript files. Content-only changes in HTML don't require version updates. Visitors will automatically receive new versions without manually clearing their cache.
 
 ## How to Customize
 
