@@ -132,11 +132,11 @@ if (videoPlaceholder) {
         const message = [
             'To add your research video:',
             '',
-            '1. Upload your video to YouTube, Vimeo, or another video hosting service',
-            '2. Get the embed code',
-            '3. Replace the video placeholder in the HTML with your video embed code',
             '',
-            'See the HTML comments in the Evidence of Action section for instructions.'
+            '',
+            '',
+            '',
+            ''
         ].join('\n');
         alert(message);
     });
