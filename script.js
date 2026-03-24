@@ -73,27 +73,45 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Intersection Observer for scroll animations
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe elements for animation
 const animateOnScroll = document.querySelectorAll('.mission-card, .leader-card, .impact-item, .highlight-item');
 
-animateOnScroll.forEach(element => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(30px)';
-    element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(element);
-});
+if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for animation
+    animateOnScroll.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(element);
+    });
+
+    // Fallback: ensure all elements are visible after 1.5 seconds
+    // in case the observer doesn't fire (slow connections, browser quirks)
+    setTimeout(() => {
+        animateOnScroll.forEach(element => {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+        });
+    }, 1500);
+} else {
+    // Browser doesn't support IntersectionObserver — show everything immediately
+    animateOnScroll.forEach(element => {
+        element.style.opacity = '1';
+        element.style.transform = 'translateY(0)';
+    });
+}
 
 // Parallax effect removed to prevent About section from overlapping with hero
 // The parallax was causing the hero to move down and cover content below
