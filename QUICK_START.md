@@ -75,31 +75,43 @@ The Evidence of Action section now has **two video placeholders**:
 <iframe width="100%" height="300" src="YOUR_VIDEO_2_URL" frameborder="0" allowfullscreen></iframe>
 ```
 
-### Add Your Photos (6 Photo Slots Available!)
-The photo gallery now has **6 empty slots** ready for your images:
+### Add Your Photos (Currently 5 Photos Displayed!)
+The Impact section displays a photo gallery of your work:
 
-1. Create a folder called `images` in your repository
-2. Add your photos (with proper permissions!)
-3. Open `index.html`
-4. Find lines ~188-241 (search for "empty-photo-placeholder")
-5. Replace each placeholder div with an image tag:
+**📸 Current Images:**
+- 5 images are already displayed in the Impact section
+- Images are in the `images` folder
 
-**Replace this:**
+**To ADD NEW images:**
+
+1. **Add your photo file** to the `images` folder
+2. **Open `index.html`** and find the Impact section (around line 181-240)
+3. **Copy one of the existing image blocks:**
 ```html
-<div class="empty-photo-placeholder">
-    <div class="photo-placeholder-content">
-        <span class="photo-icon">📷</span>
-        <p class="photo-text">Add Photo 1</p>
-    </div>
+<div class="impact-item">
+    <img src="images/YOUR_IMAGE_NAME.jpg" alt="Educational impact - Your description">
+    <p class="impact-caption">Your caption here</p>
+</div>
+```
+4. **Paste it** inside the `<div class="impact-gallery">` section
+5. **Update** the image filename, alt text, and caption
+6. **Save and refresh** your browser
+
+**📖 For detailed step-by-step instructions, see:** [ADD_IMAGES_GUIDE.md](ADD_IMAGES_GUIDE.md)
+
+**Example - Adding a new image:**
+```html
+<div class="impact-item">
+    <img src="images/school-visit-march-2024.jpg" alt="Educational impact - School visit">
+    <p class="impact-caption">Delivering books to local primary school</p>
 </div>
 ```
 
-**With this:**
-```html
-<img src="images/your-photo.jpg" alt="Description" style="width: 100%; height: 250px; object-fit: cover;">
-```
-
-💡 **Tip:** Click on any photo placeholder on the website to see instructions!
+💡 **Quick Tips:**
+- Images should be JPG or PNG format
+- Keep file sizes under 500KB for faster loading
+- Use descriptive filenames (no spaces)
+- The HTML file has helpful comments to guide you!
 
 ### Change Colors
 Open `styles.css` and edit the colors at the top:
