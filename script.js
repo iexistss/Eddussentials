@@ -230,6 +230,8 @@ console.log('Visit us to learn more about our mission to provide educational mat
 (function () {
     const BASE_COUNT = 120;
     const HISTORY_DAYS = 7;
+    const MIN_SEED_VISITS = 10;
+    const SEED_RANGE = 20;
 
     // Returns today's date string YYYY-MM-DD
     function today() {
@@ -270,7 +272,7 @@ console.log('Visit us to learn more about our mission to provide educational mat
             const key = d.toISOString().slice(0, 10);
             if (!(key in history)) {
                 // Generate a value between 10 and 30 based on day offset for a realistic curve
-                history[key] = Math.floor(10 + Math.random() * 20 + (HISTORY_DAYS - i));
+                history[key] = Math.floor(MIN_SEED_VISITS + Math.random() * SEED_RANGE + (HISTORY_DAYS - i));
                 changed = true;
             }
         }
@@ -348,7 +350,7 @@ console.log('Visit us to learn more about our mission to provide educational mat
                     padding: 10,
                     cornerRadius: 8,
                     callbacks: {
-                        label: ctx => ` ${ctx.parsed.y} visitor${ctx.parsed.y !== 1 ? 's' : ''}`
+                        label: ctx => `${ctx.parsed.y} visitor${ctx.parsed.y !== 1 ? 's' : ''}`
                     }
                 }
             },
