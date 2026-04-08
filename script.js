@@ -228,12 +228,17 @@ console.log('Visit us to learn more about our mission to provide educational mat
 
 // Site visit counter using localStorage
 (function () {
+    // BASE_COUNT represents the estimated number of visits before this counter was implemented
     const BASE_COUNT = 120;
-    const stored = parseInt(localStorage.getItem('edussentials_visits') || '0', 10);
-    const newCount = stored + 1;
-    localStorage.setItem('edussentials_visits', newCount);
 
-    const totalVisits = BASE_COUNT + newCount;
+    // Only count once per browser session to avoid inflating on refresh
+    if (!sessionStorage.getItem('edussentials_session_counted')) {
+        sessionStorage.setItem('edussentials_session_counted', '1');
+        const stored = parseInt(localStorage.getItem('edussentials_visits') || '0', 10);
+        localStorage.setItem('edussentials_visits', stored + 1);
+    }
+
+    const totalVisits = BASE_COUNT + parseInt(localStorage.getItem('edussentials_visits') || '0', 10);
     const countEl = document.getElementById('site-visit-count');
     if (countEl) {
         countEl.textContent = totalVisits.toLocaleString();
