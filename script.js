@@ -76,7 +76,7 @@ const observerOptions = {
     rootMargin: '0px 0px -50px 0px'
 };
 
-const animateOnScroll = document.querySelectorAll('.mission-card, .leader-card, .impact-item, .highlight-item');
+const animateOnScroll = document.querySelectorAll('.mission-card, .leader-card, .impact-item, .highlight-item, .spreading-stat-card');
 
 if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
@@ -225,3 +225,17 @@ window.addEventListener('beforeprint', () => {
 console.log('%cEdussentials', 'color: #3498db; font-size: 24px; font-weight: bold;');
 console.log('%cEducation for All, Hope for the Future', 'color: #2c3e50; font-size: 14px;');
 console.log('Visit us to learn more about our mission to provide educational materials to underprivileged children.');
+
+// Site visit counter using localStorage
+(function () {
+    const BASE_COUNT = 120;
+    const stored = parseInt(localStorage.getItem('edussentials_visits') || '0', 10);
+    const newCount = stored + 1;
+    localStorage.setItem('edussentials_visits', newCount);
+
+    const totalVisits = BASE_COUNT + newCount;
+    const countEl = document.getElementById('site-visit-count');
+    if (countEl) {
+        countEl.textContent = totalVisits.toLocaleString();
+    }
+}());
