@@ -334,6 +334,41 @@
     </div>
 </section>
 
+    <!-- Spreading the Word Section -->
+    <section id="spreading" class="spreading">
+        <div class="container">
+            <h2 class="section-title">Spreading the Word</h2>
+            <p class="section-subtitle">See how far our message has reached</p>
+
+            <div class="spreading-grid">
+                <div class="spreading-stat-card visitor-chart-card">
+                    <div class="spreading-icon">🌍</div>
+                    <div class="visitor-total-wrap">
+                        <span class="visitor-total" id="site-visit-count" aria-live="polite" aria-label="Website visitor count">—</span>
+                        <span class="visitor-total-label">Total Visitors</span>
+                    </div>
+                    <div class="spreading-label">Website Visitors</div>
+                    <div class="visitor-chart-wrap">
+                        <canvas id="visitorChart" aria-label="Visitor trend line graph" role="img"></canvas>
+                    </div>
+                    <p class="spreading-description">Daily visitors over the last 7 days — track how our mission is growing!</p>
+                </div>
+
+                <div class="spreading-stat-card">
+                    <div class="spreading-icon">📸</div>
+                    <div class="spreading-number">500+</div>
+                    <div class="spreading-label">Instagram Views</div>
+                    <p class="spreading-description">We have had over 500 views on our Instagram page <a href="https://instagram.com/edussentials_ke" target="_blank" rel="noopener">@edussentials_ke</a></p>
+                </div>
+            </div>
+
+            <div class="spreading-cta">
+                <p>Help us spread the word! Share our mission with your friends and family.</p>
+                <a href="https://instagram.com/edussentials_ke" target="_blank" rel="noopener" class="cta-button">Follow Us on Instagram</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Citations Section -->
     <section id="citations" class="citations">
         <div class="container">
@@ -358,35 +393,6 @@
         </div>
     </section>
 
-    <!-- Spreading the Word Section -->
-    <section id="spreading" class="spreading">
-        <div class="container">
-            <h2 class="section-title">Spreading the Word</h2>
-            <p class="section-subtitle">See how far our message has reached</p>
-
-            <div class="spreading-grid">
-                <div class="spreading-stat-card">
-                    <div class="spreading-icon">🌍</div>
-                    <div class="spreading-number" id="site-visit-count" aria-live="polite" aria-label="Website visitor count">Loading...</div>
-                    <div class="spreading-label">Website Visitors</div>
-                    <p class="spreading-description">People who have visited this site and learned about our mission</p>
-                </div>
-
-                <div class="spreading-stat-card">
-                    <div class="spreading-icon">📸</div>
-                    <div class="spreading-number">500+</div>
-                    <div class="spreading-label">Instagram Views</div>
-                    <p class="spreading-description">We have had over 500 views on our Instagram page <a href="https://instagram.com/edussentials_ke" target="_blank" rel="noopener">@edussentials_ke</a></p>
-                </div>
-            </div>
-
-            <div class="spreading-cta">
-                <p>Help us spread the word! Share our mission with your friends and family.</p>
-                <a href="https://instagram.com/edussentials_ke" target="_blank" rel="noopener" class="cta-button">Follow Us on Instagram</a>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -395,6 +401,7 @@
         </div>
     </footer>
 
-    <script src="script.js?v=1.0.3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <script src="script.js?v=1.1.0"></script>
 </body>
 </html>
