@@ -794,6 +794,104 @@ section {
     text-decoration: underline;
 }
 
+/* Spreading the Word Section */
+.spreading {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--white);
+}
+
+.spreading .section-title {
+    color: var(--white);
+}
+
+.spreading .section-title::after {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.spreading .section-subtitle {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.spreading-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.spreading-stat-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.spreading-stat-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.spreading-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.spreading-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+}
+
+.spreading-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.spreading-description {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.spreading-description a {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.spreading-description a:hover {
+    opacity: 0.8;
+}
+
+.spreading-cta {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.spreading-cta p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+}
+
+.spreading-cta .cta-button {
+    background: var(--white);
+    color: #764ba2;
+    font-weight: 700;
+}
+
+.spreading-cta .cta-button:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
 /* Footer */
 .footer {
     background: var(--dark-bg);
